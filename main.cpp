@@ -4,13 +4,12 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QHBoxLayout>
-#include "hello.h"
+#include "win.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-//    Win win
-    w.show();
-    return a.exec();
+    QApplication app(argc, argv);
+    Win win(0);
+    win.show();
+    return app.exec();
 }
