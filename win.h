@@ -8,30 +8,30 @@
 #include <QPushButton>
 #include <QValidator>
 
-class Win : public QWidget
+class Win : public QWidget // класс окна
 {
-    Q_OBJECT
+    Q_OBJECT // макрос Qt, обеспечивающий корректное создание сигналов и слотов
 private:
-    QFrame *frame;
-    QLabel *inputLabel;
-    QLineEdit *inputEdit;
-    QLabel *outputLabel;
-    QLineEdit *outputEdit;
-    QPushButton *nextButton;
-    QPushButton *exitButton;
+    QFrame *frame; // рамка
+    QLabel *inputLabel; // метка ввода
+    QLineEdit *inputEdit; // строчный редактор ввода
+    QLabel *outputLabel; // метка вывода
+    QLineEdit *outputEdit; // строчный редактор вывода
+    QPushButton *nextButton; // кнопка Следующее
+    QPushButton *exitButton; // кнопка Выход
 public:
-    explicit Win(QWidget *parent = nullptr);
+    explicit Win(QWidget *parent = nullptr); //конструктор
 
 public slots:
-    void begin();
-    void calc();
+    void begin(); //метод начальной настройки интерфейса
+    void calc(); //метод реализации интерфйса
 };
 
-class StrValidator:public QValidator {
+class StrValidator:public QValidator { //класс компонента проверки ввода
 public:
     StrValidator(QObject *parent):QValidator(parent) {}
     virtual State validate(QString &str, int &pos) const {
-        return Acceptable;
+        return Acceptable; //метод всегда принимает вводимую строку
     }
 };
 
