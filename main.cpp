@@ -4,8 +4,8 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    Win win(0);
-    win.show();
-    return app.exec();
+    QApplication app(argc, argv); //создание объекта прирложения
+    Win win(0); // создание объекта управления окном
+    win.show(); // визуплизация окна
+    return app.exec(); // запуск цикла обработки приложения
 }
