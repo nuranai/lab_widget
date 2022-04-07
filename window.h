@@ -9,9 +9,9 @@ class Window : public QWidget
 {
 protected:
     Area * area; // область отображения рисунка
-    QPushButton * btn;
+    QPushButton * btn; // кнопка выхода
 public:
-    Window();
+    Window(); //конструктор
 };
 
 #endif // WINDOW_H

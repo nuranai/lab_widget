@@ -3,11 +3,11 @@
 
 Window::Window()
 {
-    this->setWindowTitle("Event Handler");
-    area = new Area( this );
-    btn = new QPushButton("Exit",this );
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->addWidget(area);
-    layout->addWidget(btn);
-    connect(btn, SIGNAL(clicked(bool)),this,SLOT(close()));
+    this->setWindowTitle("Event Handler"); //устанавливаем заголовок
+    area = new Area( this ); //создаем холст
+    btn = new QPushButton("Exit",this ); //создаем кнопку
+    QVBoxLayout *layout = new QVBoxLayout(this); //задаем вертикалььную разметку
+    layout->addWidget(area); //добавляем в разметку золст
+    layout->addWidget(btn); // так же и кнопку
+    connect(btn, SIGNAL(clicked(bool)),this,SLOT(close())); //создаем сигнал при нажатии на кнопку закрытие окна
 };

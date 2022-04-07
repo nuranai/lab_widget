@@ -2,30 +2,30 @@
 #define FIGURE_H
 #include <QtGui>
 
-class Figure
+class Figure //класс родитель для фигур
 {
 protected:
     int x,y,halflen,dx,dy,r;
-    virtual void draw(QPainter *Painter)=0;
+    virtual void draw(QPainter *Painter)=0; //виртуальная функция для рисования фигур
 public:
     Figure(int X,int Y,int Halflen):
-        x(X),y(Y),halflen(Halflen){}
+        x(X),y(Y),halflen(Halflen){} //конструктор
     void move(float Alpha,QPainter *Painter);
 };
 
-class MyLine:public Figure
+class MyLine:public Figure //класс линия
 {
 protected:
     void draw(QPainter *Painter);
 public:
-    MyLine(int x,int y,int halflen):Figure(x,y,halflen){}
+    MyLine(int x,int y,int halflen):Figure(x,y,halflen){} //конструктор
 };
-class MyRect:public Figure
+class MyRect:public Figure //класс прямоугольника
 {
 protected:
     void draw(QPainter *Painter);
 public:
-    MyRect(int x,int y,int halflen):Figure(x,y,halflen){}
+    MyRect(int x,int y,int halflen):Figure(x,y,halflen){} //конструктор
 };
 
 #endif // FIGURE_H
